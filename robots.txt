@@ -1,14 +1,24 @@
 User-agent: Googlebot
-Allow: /
+Disallow: /*
+Disallow: /gallery/
+Disallow: /timeline/
 
 User-agent: Bingbot
-Allow: /
+Disallow: /*
+Disallow: /gallery/
+Disallow: /timeline/
 
 User-agent: Twitterbot
-Allow: /
+Disallow: /*
+Disallow: /gallery/
+Disallow: /timeline/
 
 User-agent: facebookexternalhit
-Allow: /
+Disallow: /*
+Disallow: /gallery/
+Disallow: /timeline/
 
 User-agent: *
-Allow: /
+Disallow: /*
+Disallow: /gallery/
+Disallow: /timeline/
