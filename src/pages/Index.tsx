@@ -22,14 +22,14 @@ const timelineEntries: TimelineEntry[] = [
     date: "May 2nd 2024",
     title: "One week later, digits secured",
     description: "The concept of 519 was so foreign I save your number twice in case you didn't answer me..... again",
-    imageSrc: "public/timeline/1.jpg"
+    imageSrc: "/public/timeline/1.jpg"
   },
   {
     id: 2,
     date: "May 4th 2024",
     title: "The texting began and never stopped",
     description: "Spent the day pretending to be cool but was actually babysitting the dogs and making a playlist to try and impress you with",
-    imageSrc: "public/timeline/2.jpg"
+    imageSrc: "/public/timeline/2.jpg"
   },
   {
     id: 3,
