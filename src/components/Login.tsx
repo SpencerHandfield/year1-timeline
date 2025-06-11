@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'a') {
+    if (password === 'iloveyoumybaby') {
       // Play background music when login is successful
       //const audio = new Audio('https://www.soundjay.com/misc/sounds/magic-chime-02.wav');
       // audio.volume = 0.3;

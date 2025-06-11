@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Volume2, VolumeX } from "lucide-react";
+import teamilkhoney from "/public/teamilkhoney.mp3"
 
 // Import all gallery images from assets (assuming you moved images to src/assets/gallery/)
 const galleryImports = import.meta.glob('@/assets/gallery/*.jpg', { eager: true });
@@ -15,6 +16,10 @@ const Gallery = () => {
   const navigate = useNavigate();
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
 
   useEffect(() => {
     // Start background music
@@ -42,8 +47,7 @@ const Gallery = () => {
         preload="auto"
         className="hidden"
       >
-        <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg" />
-        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav" />
+        <source src={teamilkhoney} type="audio/wav" />
       </audio>
 
       {/* Music Control Button */}
