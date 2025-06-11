@@ -6,6 +6,7 @@ import { GalleryHorizontal, Volume2, VolumeX } from "lucide-react";
 import Hero from '../components/Hero';
 import Timeline, { TimelineEntry } from '../components/Timeline';
 import Login from '../components/Login';
+import img00 from "/public/timeline/00.jpg";
 
 // Sample timeline entries
 const timelineEntries: TimelineEntry[] = [
@@ -14,7 +15,7 @@ const timelineEntries: TimelineEntry[] = [
     date: "April 25th 2024",
     title: "Love at first message",
     description: "",
-    imageSrc: "public/timeline/00.jpg"
+    imageSrc: img00
   },
   {
     id: 1,
@@ -1457,7 +1458,7 @@ const Index = () => {
         className="hidden"
       >
         <source src="public/Who Knew.mp3" type="audio/wav" />
-        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav" />
+      
       </audio>
 
       {/* Music Control Button */}
