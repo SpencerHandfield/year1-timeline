@@ -3,69 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Volume2, VolumeX } from "lucide-react";
 
-// Sample gallery images - can be easily expanded by adding more entries
-const galleryImages = [
-  {
-    id: 1,
-    imageSrc: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=400",
-    alt: "New Year's Celebration"
-  },
-  {
-    id: 2,
-    imageSrc: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=400",
-    alt: "Spring Flowers"
-  },
-  {
-    id: 3,
-    imageSrc: "https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=400",
-    alt: "Summer Beach"
-  },
-  {
-    id: 4,
-    imageSrc: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=400",
-    alt: "Autumn Leaves"
-  },
-  {
-    id: 5,
-    imageSrc: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=400",
-    alt: "Winter Wonderland"
-  },
-  {
-    id: 6,
-    imageSrc: "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=400",
-    alt: "City Skyline"
-  },
-  {
-    id: 7,
-    imageSrc: "https://images.unsplash.com/photo-1546514355-7fdc90ccbd03?auto=format&fit=crop&w=400",
-    alt: "Mountain Landscape"
-  },
-  {
-    id: 8,
-    imageSrc: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400",
-    alt: "Forest View"
-  },
-  {
-    id: 9,
-    imageSrc: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400",
-    alt: "Sunset Over Water"
-  },
-  {
-    id: 10,
-    imageSrc: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400",
-    alt: "Tropical Beach"
-  },
-  {
-    id: 11,
-    imageSrc: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400",
-    alt: "Starry Night"
-  },
-  {
-    id: 12,
-    imageSrc: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400",
-    alt: "Landscape Vista"
-  }
-];
+// Import all gallery images from assets (assuming you moved images to src/assets/gallery/)
+const galleryImports = import.meta.glob('@/assets/gallery/*.jpg', { eager: true });
+const galleryImages = Object.entries(galleryImports).map(([path, mod], idx) => ({
+  id: idx + 1,
+  imageSrc: (mod as { default: string }).default,
+  alt: `Gallery Image ${idx + 1}`
+}));
 
 const Gallery = () => {
   const navigate = useNavigate();
