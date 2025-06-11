@@ -47,7 +47,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   }, []);
 
   // Subtle staggered animation delay
-  const animationDelay = `${index * 0.15}s`;
+  const animationDelay = `${0.5}s`;
 
   return (
     <div 
@@ -65,11 +65,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               <p className="font-sans text-gray-600 text-lg leading-relaxed">{description}</p>
             </div>
             <div className="flex justify-center md:justify-start order-1 md:order-2 px-6">
-              <div className="timeline-image-container relative overflow-hidden rounded-xl shadow-lg w-full max-w-md h-64 md:h-72">
+              <div className="timeline-image-container relative overflow-hidden rounded-xl shadow-lg w-full max-w-md">
                 <img 
                   src={imageSrc} 
                   alt={title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-cornflower-blue/5" />
               </div>
@@ -78,11 +78,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         ) : (
           <>
             <div className="flex justify-center md:justify-end order-1 px-6">
-              <div className="timeline-image-container relative overflow-hidden rounded-xl shadow-lg w-full max-w-md h-64 md:h-72">
+              <div className="timeline-image-container relative overflow-hidden rounded-xl shadow-lg w-full max-w-md">
                 <img 
                   src={imageSrc} 
                   alt={title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-cornflower-blue/5" />
               </div>
